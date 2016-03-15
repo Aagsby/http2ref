@@ -41,19 +41,16 @@ function app(req, res) {
     router(req, res, finalhandler(req, res));
 }
 
-var port = process.env.PORT || 8081
-
-
 function useHttp2() {
-  http2.createServer(options, app).listen(port);
+  http2.createServer(options, app).listen(8443);
 }
 
 function useHttp() {
   var server = http.createServer(function(req, res) {
     router(req, res, finalhandler(req, res))
   })
-  server.listen(port)
+  server.listen(8888)
 }
 
-//useHttp();
+useHttp();
 useHttp2();
