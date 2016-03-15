@@ -49,7 +49,7 @@ function useHttp() {
   var server = http.createServer(function(req, res) {
     router(req, res, finalhandler(req, res))
   })
-  server.listen(8888)
+  server.listen(8880)
 }
 
 useHttp();
