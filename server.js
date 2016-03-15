@@ -43,14 +43,14 @@ function app(req, res) {
 
 
 function useHttp2() {
-  http2.createServer(options, app).listen(8080);
+  http2.createServer(options, app).listen(443);
 }
 
 function useHttp() {
   var server = http.createServer(function(req, res) {
     router(req, res, finalhandler(req, res))
   })
-  server.listen(8081)
+  server.listen(80)
 }
 
 useHttp();
